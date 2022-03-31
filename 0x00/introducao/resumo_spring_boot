@@ -1,0 +1,58 @@
+Escreva um artigo sobre o Framework Spring Boot.
+
+    O Spring Boot é um framework que está dentro do ecossistema Spring que nos ajuda a criar
+aplicações stand-alone (aplicações que rodam sozinhas), onde a única requisição é o Java instalado na máquina.
+E o Spring Boot nos ajuda a criar projetos com as configurações inciais.
+
+    As vantagens de utilizar o Spring Boot são várias, mas vou citar as principais como: configuração do projeto através
+ de convenção. Exemplo: Ao configurar uma dependência específica como JPA, ele adiciona outras dependências que o JPA
+precisa para ser rodado e é feito a configurações dessas dependências automaticamente. Isso se chama convenção de dependência.
+O Spring já vem com servidor embarcado que por padrão é o TomCat. Não há necessidade de subir um servidor, pois já vem
+configurado. Organização do POM.xml, como atualização das dependência, inserção de dependências.
+    Dentro do Spring tem o Spring Tools que ajuda na tarefas do dia a dia, pois ele reincia o projeto automaticamente,
+habilita por padrão dependências provenientes aos projetos desenvolvidos.
+
+    Para adicionar dependências no Maven, basta ir até o POM.xml, onde estará localizado toda a configuração do seu
+ projeto.
+
+            <?xml version="1.0" encoding="UTF-8"?>
+            <project xmlns="http://maven.apache.org/POM/4.0.0"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                <modelVersion>4.0.0</modelVersion>
+
+                <groupId>org.example</groupId>
+                <artifactId>maven-project</artifactId>
+                <version>1.0-SNAPSHOT</version>
+
+                <dependencies>
+                  <dependency>
+                      <groupId>org.springframework.boot</groupId>
+                       <artifactId>spring-boot-starter-web</artifactId>
+                  </dependency>
+                </dependencies>
+            </project>
+
+    Dentro de <dependencies>, adicione um groupID, artifactId, em alguns casos adicione também o version.
+    - groupId -> identificador único da organização ou grupo que criou o projeto.
+    - artifactId -> Nome do artefato primário a ser gerado pelo projeto - tipicamente um arquivo JAR(ex: persistence-api).
+    - versinon ->   Versão da dependência.
+    Ex:
+        <dependency>
+           <groupId>org.springframework.boot</groupId>
+           <artifactId>spring-boot-starter-web</artifactId>
+           <version></vesion>
+        </dependency>
+
+    E após a inserção da depenência, é só dar um Build Project que todas as dependências serão inseridas e atualizadas.
+
+    Mas você deve estar se perguntando qual a melhor IDE para desenvolver em Java?! Isso é uma coisa muito pessoal, porém
+ utilizo a IDE Intellij. O Intellij é muito fácil, intuitivo, disponibiliza pluggins que ajudam e facilitam no desenvolvimento.
+ Na versão paga o Intellij possui uma gama de facilidades como: rodar várias api em uma janela, conectar o banco de dados
+ pela IDE, sem a necessidade de abrir o BD. Entre outras facilidades que a IDE fornece.
+
+    Você aprendeu o que é Spring Boot, sua vantagens, como adicionar uma dependência no Maven e um pouco sobre o Intellij, agora
+ vou falar sobre o Spring Initializer.
+    O Spring Initializer é uma ferramenta que é página web onde você configura sem a necessidade de IDE. Simples assim.
+ Você escolhe a versão do Spring Boot, gerenciador de dependências, as dependências, a linguagem e depois disso é só
+ baixar em sua máquina, escolher a IDE de sua preferência e o Spring irá dar um build do seu projeto.
