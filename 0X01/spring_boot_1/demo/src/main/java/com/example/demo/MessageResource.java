@@ -1,7 +1,6 @@
 package com.example.demo;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,12 +10,12 @@ public class MessageResource {
 
     @GetMapping("/simpleMessageWelcome")
     public String simpleMessageWelcome(String message) {
-        return "BEM VINDO A AULA DE MICROSERVIÇO USANDO SPRING BOOT !!!";
+        return "BEM VINDO A AULA DE MICROSERVIÇO USANDO SPRING BOOT";
     }
 
-    @GetMapping("/login/{user}/{password}")
-    public String login (@PathVariable String user, String password) throws Exception {
-        String message = "LOGIN EFETUADO COM SUCESSO !!!";
+    @GetMapping("/login")
+    public String login ( String user, String password) throws Exception {
+        String message = null;
         String user1 = "manow";
         String senha = "9899";
 
@@ -25,8 +24,10 @@ public class MessageResource {
         }
         if(user1.length() > 15 && senha.length() >15){
            message = "USUÁRIO E SENHA INVÁLIDOS";
+        } else {
+        	message =  "LOGIN EFETUADO COM SUCESSO !!!";
         }
         return message;
     }
-
-}
+   }
+    
