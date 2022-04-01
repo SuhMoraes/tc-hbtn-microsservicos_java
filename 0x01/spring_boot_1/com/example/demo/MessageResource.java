@@ -10,7 +10,7 @@ public class MessageResource {
 
     @GetMapping("/simpleMessageWelcome")
     public String simpleMessageWelcome(String message) {
-        return "BEM VINDO A AULA DE MICROSERVIÇO USANDO SPRING BOOT";
+        return "BEM VINDO A AULA DE MICROSERVIÇO USANDO SPRING BOOT !!!!";
     }
 
     @GetMapping("/login")
