@@ -14,8 +14,8 @@ public class MessageResource {
     }
 
     @GetMapping("/login")
-    public String login ( String user, String password) throws Exception {
-        String message = null;
+    public String login ( String user, String password) {
+        String message = "LOGIN EFETUADO COM SUCESSO !!!";
         String user1 = "manow";
         String senha = "9899";
 
@@ -24,8 +24,6 @@ public class MessageResource {
         }
         if(user1.length() > 15 && senha.length() >15){
            message = "USUÁRIO E SENHA INVÁLIDOS";
-        } else {
-        	message =  "LOGIN EFETUADO COM SUCESSO !!!";
         }
         return message;
     }
